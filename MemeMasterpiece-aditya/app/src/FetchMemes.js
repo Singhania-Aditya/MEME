@@ -5,7 +5,7 @@ export async function getMemes(after) {
   let newAfter;
   
   try {
-    const response = await axios.get(`https://www.reddit.com/r/memes.json?after=${after}`);
+    const response = await axios.get(`https://www.reddit.com/r/memes.json`);
     memes = response.data.data.children
       .filter((child) => child.data.post_hint === 'image')
       .map((child) => {
